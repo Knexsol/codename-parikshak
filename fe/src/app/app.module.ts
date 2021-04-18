@@ -9,15 +9,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 import { HeaderComponent, FooterComponent } from './components/layout';
-import { LandingComponent } from './components/pages';
+import { LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGalleryComponent } from './components/pages';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LandingComponent
+    LandingComponent,
+    CreateExamComponent,
+    CreateOrgComponent,
+    ExamsGalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,8 @@ import { LandingComponent } from './components/pages';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

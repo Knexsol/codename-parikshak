@@ -1,0 +1,13 @@
+
+
+<!-- A QA-Block -->
+<mat-card class="qa-block">
+    <mat-form-field>
+        <mat-label>Question Type</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let qType of qTypes" [value]="qType.id">
+            {{qType.text}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-card>

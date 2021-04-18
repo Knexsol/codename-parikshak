@@ -1,7 +1,7 @@
 <div class="landing_page">
-    <div class="giant_text text_center">I am here to</div>
-    <div class="mt_15 text_center">
-        <button mat-raised-button class="mr_5" (click)="visibleCard = 'CREATE_EXAM'">Create an Exam</button>
+    <div class="giant_text text-center">I am here to</div>
+    <div class="mt-15 text-center">
+        <button mat-raised-button class="mr-5" (click)="visibleCard = 'CREATE_EXAM'">Create an Exam</button>
         <button mat-raised-button (click)="visibleCard = 'TAKE_EXAM'">Take an Exam</button>
 
         <div class="action-cards-container">
@@ -10,8 +10,8 @@
                 <mat-icon class="close_ico" (click)="visibleCard = ''">cancel</mat-icon>
                 <p>I want to</p>
                 <ul>
-                    <li><a mat-button href="https://www.google.com/" target="_blank">Create a Single Exam</a></li>
-                    <li><a mat-button href="https://www.google.com/" target="_blank">Create an Organization</a></li>
+                    <li><a mat-button routerLink="/create-exam">Create a Single Exam</a></li>
+                    <li><a mat-button routerLink="/create-org">Create an Organization</a></li>
                 </ul>
             </mat-card>
 
@@ -20,7 +20,7 @@
                 <mat-icon class="close_ico" (click)="visibleCard = ''">cancel</mat-icon>
                 <p>I have an Exam-Code</p>
                 <div class="input_and_button">
-                    <mat-form-field class="mr_5" fullWidth>
+                    <mat-form-field class="mr-5" fullWidth>
                         <input type="text" matInput placeholder="Enter exam code">
                     </mat-form-field>
                     <button mat-raised-button>
@@ -31,12 +31,11 @@
                 <div>
                     <span>OR</span>
                 </div>
-                <div class="mt_5">
-                    I would like to<a mat-button href="https://www.google.com/" target="_blank">Browse all exams</a>
+                <div class="mt-5">
+                    I would like to<a mat-button routerLink="/exams-gallery">Browse all exams</a>
                 </div>
             </mat-card>
         </div>
-        
     </div>
 </div>
 
