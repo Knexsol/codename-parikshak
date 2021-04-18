@@ -1,0 +1,33 @@
+<div class="landing_page">
+    <div class="giant_text text_center">I am here to</div>
+    <div class="mt_15 text_center">
+        <button mat-raised-button class="mr_5">Create an Exam</button>
+        <button mat-raised-button (click)="isTakeExamCardVisible = !isTakeExamCardVisible">Take an Exam</button>
+
+        <mat-card class="take_exam_card" [ngClass]="{ visible: isTakeExamCardVisible }">
+            <p>I have an Exam-Code</p>
+            <div class="input_and_button">
+                <mat-form-field class="mr_5" fullWidth>
+                    <!-- <mat-label>Exam Code</mat-label> -->
+                    <!-- <span matPrefix>+1 &nbsp;</span> -->
+                    <input type="text" matInput placeholder="Enter exam code">
+                    <!-- <mat-icon matSuffix>double_arrow</mat-icon> -->
+                </mat-form-field>
+                <button mat-raised-button>
+                    Go
+                    <mat-icon>double_arrow</mat-icon>
+                </button>
+            </div>
+
+            <div>
+                <span>OR</span>
+            </div>
+
+            <div>
+                I would like to<a mat-button href="https://www.google.com/" target="_blank">Browse all exams</a>
+            </div>
+            
+        </mat-card>
+    </div>
+</div>
+

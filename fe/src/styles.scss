@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;700&display=swap');
+
+:root {
+    --primary-color: #29b6f6;
+    --primary-color-dark: #0d47a1;
+}
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font-family: 'Cairo', sans-serif !important;
+    color: rgba(0 0 0 / 75%);
+    font-size: 16px;
+}
+
+/**
+* UTILITIES
+**/
+.mt_5 { margin-top: 5px !important; }
+.mt_15 { margin-top: 15px !important; }
+.mr_5 { margin-right: 5px !important; }
+.text_center { text-align: center; }
+
+/**
+* Material Override
+**/
+.mat-body, .mat-body-1, .mat-typography {
+    font-size: 16px;
+}
+mat-form-field[fullWidth] {
+    display: flex;
+    flex: 1;
+    .mat-form-field-wrapper {
+        width: 100%
+    }
+}

@@ -1,0 +1,38 @@
+.landing_page {
+    padding-top: 15px
+}
+.giant_text {
+    font-size: 50px;
+    line-height: 60px;
+}
+.input_and_button {
+    display: flex;
+    justify-content: center;
+    align-items: self-end;
+}
+.take_exam_card {
+    width: 300px;
+    margin: 18px auto;
+    text-align: left;
+    padding: 15px 25px;
+    border-top: 5px solid var(--primary-color);
+    transition: all 300ms ease-in;
+    transform: scaleY(0);
+    transform-origin: top;
+    position: relative;
+}
+.take_exam_card::before {
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--primary-color);
+    position: absolute;
+    right: 90px;
+    top: -15px;
+}
+.take_exam_card.visible {
+    transform: scaleY(1);
+}
+mat-icon {
+    color: var(--primary-color);
+}
