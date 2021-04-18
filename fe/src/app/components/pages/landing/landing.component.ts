@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  isTakeExamCardVisible = false
+  visibleCard = ''  // Possible values = 'CREATE_EXAM' 'TAKE_EXAM'
 
   constructor() { }
 

@@ -1,5 +1,6 @@
+ 
 .landing_page {
-    padding-top: 15px
+    padding-top: 15px;
 }
 .giant_text {
     font-size: 50px;
@@ -8,30 +9,48 @@
 .input_and_button {
     display: flex;
     justify-content: center;
-    align-items: self-end;
+    align-items: baseline;
 }
-.take_exam_card {
+.action-cards-container {
     width: 300px;
     margin: 18px auto;
+    position: relative;
+}
+.action_card {
+    width: 300px;
     text-align: left;
     padding: 15px 25px;
     border-top: 5px solid var(--primary-color);
     transition: all 300ms ease-in;
     transform: scaleY(0);
     transform-origin: top;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-.take_exam_card::before {
+.action_card::before {
     content: "";
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid var(--primary-color);
     position: absolute;
-    right: 90px;
+    // right: 90px;
     top: -15px;
 }
-.take_exam_card.visible {
+.create_exam_card::before {
+    left: 90px;
+}
+.take_exam_card::before {
+    right: 90px;
+}
+.action_card.visible {
     transform: scaleY(1);
+}
+.action_card .close_ico {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: default;
 }
 mat-icon {
     color: var(--primary-color);
