@@ -1,0 +1,33 @@
+<mat-card class="qa-block" [ngClass]="{ collapsed: isCollapsed }">
+    <div class="line-1">
+        <span class="qablock-label">QA&nbsp;<span class="hide-below-600">&nbsp;Block&nbsp;</span>{{qaBlockIndex+1}}</span>
+        <mat-form-field>
+            <mat-label>Question Type</mat-label>
+            <mat-select [(ngModel)]="qaBlock.type">
+              <mat-option *ngFor="let qType of Q_TYPES" [value]="qType.id">
+                {{qType.text}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <span class="toggler-ico" (click)="isCollapsed = !isCollapsed">
+            <mat-icon *ngIf="!isCollapsed">expand_less</mat-icon>
+            <mat-icon *ngIf="isCollapsed">expand_more</mat-icon>
+        </span>
+        
+    </div>
+    <div class="body">
+        <mat-form-field class="question">
+            <mat-label>Question</mat-label>
+            <textarea matInput placeholder="Type question here..." rows="4" [(ngModel)]="qaBlock.question"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="option" *ngFor="let option of qaBlock.options; let optionIndex = index">
+            <span class="op-index">{{ALPHA[optionIndex]}}. </span>
+            <mat-label>Option</mat-label>
+            <input matInput placeholder="Type option here..." [value]="option" (change)="updateOptionValue($event, optionIndex)">
+            <mat-icon class="del-op">delete</mat-icon>
+        </mat-form-field>
+
+        <button *ngIf="qaBlock.options.length < MAX_OPTION" mat-raised-button (click)="addNewOption()">Add Option</button>
+    </div>
+</mat-card>

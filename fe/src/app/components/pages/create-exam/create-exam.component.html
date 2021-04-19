@@ -1,13 +1,10 @@
 
 
-<!-- A QA-Block -->
-<mat-card class="qa-block">
-    <mat-form-field>
-        <mat-label>Question Type</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let qType of qTypes" [value]="qType.id">
-            {{qType.text}}
-          </mat-option>
-        </mat-select>
-    </mat-form-field>
-</mat-card>
+
+<div *ngFor="let qaBlock of getQABlocks();let blockIndex = index" class="qablock-outer">
+    <app-qa-block [qaBlock]="qaBlock" [qaBlockIndex]="blockIndex"></app-qa-block>
+</div>
+
+<button mat-raised-button color="primary" (click)="addNewQABlock()">Add New QA Block</button>
+
+

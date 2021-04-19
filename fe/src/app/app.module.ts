@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { HeaderComponent, FooterComponent } from './components/layout';
 import { LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGalleryComponent } from './components/pages';
+import { QABlockComponent } from './components/pages/create-exam/qa-block/qa-block.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,14 @@ import { LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGallery
     LandingComponent,
     CreateExamComponent,
     CreateOrgComponent,
-    ExamsGalleryComponent
+    ExamsGalleryComponent,
+    QABlockComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule ,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
