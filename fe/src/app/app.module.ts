@@ -10,9 +10,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
 import { HeaderComponent, FooterComponent } from './components/layout';
 import { LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGalleryComponent } from './components/pages';
 import { QABlockComponent } from './components/pages/create-exam/qa-block/qa-block.component';
+import { CreateExamStepsComponent } from './components/pages/create-exam/create-exam-steps/create-exam-steps.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { QABlockComponent } from './components/pages/create-exam/qa-block/qa-blo
     CreateOrgComponent,
     ExamsGalleryComponent,
     QABlockComponent,
+    CreateExamStepsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { QABlockComponent } from './components/pages/create-exam/qa-block/qa-blo
     MatCardModule,
     MatInputModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@ export class QAService {
         return {
             id: 'QA_' + Date.now() + '_' + Math.random().toString().replace('.', ''),
             type: Q_TYPES[0].id,
-            question: 'Who is Superman',
+            question: '',
             options: [],
             ans: ''
         }

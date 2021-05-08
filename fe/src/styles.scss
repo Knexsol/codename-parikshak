@@ -34,6 +34,32 @@ body {
 .mat-body, .mat-body-1, .mat-typography {
     font-size: 16px;
 }
+
+/**********************************************
+* Custom Scrollbar
+**********************************************/
+  /* width */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-dark);
+  }
+/********************************************/
+
 mat-form-field[fullWidth] {
     display: flex;
     flex: 1;
