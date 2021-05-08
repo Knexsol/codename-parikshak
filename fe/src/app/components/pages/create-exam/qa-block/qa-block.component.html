@@ -1,19 +1,23 @@
+<div class="top-tag">
+    <span class="id no-select" (click)="isCollapsed = !isCollapsed">
+        QA Block {{qaBlockIndex+1}}
+        <span class="toggler-ico">
+            <mat-icon *ngIf="!isCollapsed">expand_less</mat-icon>
+            <mat-icon *ngIf="isCollapsed">expand_more</mat-icon>
+        </span>
+    </span>
+    
+</div>
 <mat-card class="qa-block" [ngClass]="{ collapsed: isCollapsed }">
     <div class="line-1">
-        <span class="qablock-label">QA&nbsp;<span class="hide-below-600">&nbsp;Block&nbsp;</span>{{qaBlockIndex+1}}</span>
-        <mat-form-field>
-            <mat-label>Question Type</mat-label>
+        <mat-form-field class="mat-form-pt-0">
+            <!-- <mat-label>Question Type</mat-label> -->
             <mat-select [(ngModel)]="qaBlock.type">
               <mat-option *ngFor="let qType of Q_TYPES" [value]="qType.id">
                 {{qType.text}}
               </mat-option>
             </mat-select>
         </mat-form-field>
-        <span class="toggler-ico" (click)="isCollapsed = !isCollapsed">
-            <mat-icon *ngIf="!isCollapsed">expand_less</mat-icon>
-            <mat-icon *ngIf="isCollapsed">expand_more</mat-icon>
-        </span>
-        
     </div>
     <div class="body">
         <mat-form-field class="question">

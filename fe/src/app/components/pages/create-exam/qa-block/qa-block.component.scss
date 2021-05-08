@@ -1,7 +1,33 @@
+.top-tag {
+    text-align: center;
+}
+.top-tag .id {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 5px 36px 5px 15px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    position: relative;
+}
+.toggler-ico {
+    position: absolute;
+    right: 6px;
+    top: 3px;
+    color: var(--primary-color-medium);
+    cursor: default;
+    color: #fff;
+}
+.toggler-ico mat-icon {
+    font-size: 24px;
+}
 .qa-block {
-    border-top: 3px solid var(--primary-color);
+    border-top: 5px solid var(--primary-color);
     // margin: 0 15px;
-    padding-top: 10px;
+    padding-top: 0;
     transition: all 500ms linear;
     // transform-origin: top;
     max-height: 500px;
@@ -10,23 +36,14 @@
 .qa-block.collapsed {
     // transform: scaleY(0)
     overflow: hidden;
-    max-height: 75px;
+    max-height: 7px;
+    padding-bottom: 0;
 }
 .line-1 {
     display: flex;
     justify-content: space-between;
     padding-right: 50px;
     position: relative;
-}
-.toggler-ico {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: var(--primary-color-medium);
-    cursor: default;
-}
-.toggler-ico mat-icon {
-    font-size: 32px;
 }
 .qablock-label {
     align-items: center;
