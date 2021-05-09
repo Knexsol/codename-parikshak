@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TQABlock } from '../types/question.types'
+import { TQPaper, TQABlock } from '../types/question.types'
 import { Q_TYPES } from '../utils/constants'
 
 @Injectable({
@@ -8,6 +8,22 @@ import { Q_TYPES } from '../utils/constants'
 export class QAService {
 
     constructor() { }
+
+    getNewQPaper (): TQPaper {
+        let newQABlock = this.getNewQABlock()
+        return {
+            id: '_LOCAL_QPaper_' + Date.now() + '_' + Math.random().toString().replace('.', ''),
+            intro: {
+                name: 'New Exam Paper'
+            },
+            body: {
+                [newQABlock.id]: newQABlock
+            },
+            finish: {
+                duration: 1800  // 30 mins exam
+            }
+        }
+    }
 
     getNewQABlock (): TQABlock {
         return {

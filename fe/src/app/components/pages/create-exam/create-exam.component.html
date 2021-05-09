@@ -1,14 +1,17 @@
 
+<mat-horizontal-stepper>
+    <mat-step label="Intro">
+        <app-create-exam-intro-section [qaIntroObj]="qPaper.intro"></app-create-exam-intro-section>
+    </mat-step>
+    <mat-step label="Body">
+        <app-create-exam-body-section [qaBlocksObj]="qPaper.body"></app-create-exam-body-section>
+    </mat-step>
+    <mat-step label="Finish">
+        <app-create-exam-finish-section [qaFinishObj]="qPaper.finish"></app-create-exam-finish-section>
+    </mat-step>
+</mat-horizontal-stepper>
 
-<app-create-exam-steps></app-create-exam-steps>
 
-<div *ngFor="let qaBlock of getQABlocks();let blockIndex = index" class="qablock-outer">
-    <app-qa-block [qaBlock]="qaBlock" [qaBlockIndex]="blockIndex"></app-qa-block>
-</div>
-
-<div class="btn-panel">
-    <button mat-raised-button color="primary" (click)="addNewQABlock()">Add New QA Block</button>
-</div>
 
 
 

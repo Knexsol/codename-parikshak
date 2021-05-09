@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TQABlock } from '../../../types/question.types'
+import { TQABlock, TQPaper } from '../../../types/question.types'
 import { QAService } from '../../../services/qa.service'
 
 @Component({
@@ -9,18 +9,11 @@ import { QAService } from '../../../services/qa.service'
 })
 export class CreateExamComponent implements OnInit {
 
-    qaBlocksObj: { [id:string]: TQABlock } = {}
-
+    qPaper: TQPaper
+    
     constructor(private _qaService: QAService) {
-        this.addNewQABlock()
+        this.qPaper = _qaService.getNewQPaper()
         // console.log('this.qaBlocksObj =', this.qaBlocksObj)
-    }
-
-    getQABlocks = () => Object.values(this.qaBlocksObj)
-
-    addNewQABlock = () => {
-        const newQABlockObj = this._qaService.getNewQABlock()
-        this.qaBlocksObj[newQABlockObj.id] = newQABlockObj
     }
 
     ngOnInit(): void {

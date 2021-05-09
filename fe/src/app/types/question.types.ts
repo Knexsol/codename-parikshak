@@ -5,3 +5,18 @@ export type TQABlock = {
     options: Array<string>
     ans: string 
 }
+export type TQPaperIntro = {
+    name: string
+}
+export type TQPaperBody = {
+    [qaBockID: string]: TQABlock
+}
+export type TQPaperFinish = {
+    duration: number
+}
+export type TQPaper = {
+    id: string
+    intro: TQPaperIntro
+    body: TQPaperBody
+    finish: TQPaperFinish
+}

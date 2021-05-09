@@ -14,7 +14,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { HeaderComponent, FooterComponent } from './components/layout';
 import { LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGalleryComponent } from './components/pages';
 import { QABlockComponent } from './components/pages/create-exam/qa-block/qa-block.component';
-import { CreateExamStepsComponent } from './components/pages/create-exam/create-exam-steps/create-exam-steps.component';
+import { CreateExamIntroSectionComponent } from './components/pages/create-exam/create-exam-intro-section/create-exam-intro-section.component';
+import { CreateExamBodySectionComponent } from './components/pages/create-exam/create-exam-body-section/create-exam-body-section.component';
+import { CreateExamFinishSectionComponent } from './components/pages/create-exam/create-exam-finish-section/create-exam-finish-section.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CreateExamStepsComponent } from './components/pages/create-exam/create-
     CreateOrgComponent,
     ExamsGalleryComponent,
     QABlockComponent,
-    CreateExamStepsComponent,
+    CreateExamIntroSectionComponent,
+    CreateExamBodySectionComponent,
+    CreateExamFinishSectionComponent,
   ],
   imports: [
     BrowserModule,
