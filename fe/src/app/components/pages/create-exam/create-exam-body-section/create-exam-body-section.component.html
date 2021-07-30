@@ -1,10 +1,10 @@
 <h2>Create the Questions and Answers</h2>
 <div>
-    <div *ngFor="let qaBlock of getQABlocks();let blockIndex = index" class="qablock-outer">
+    <div *ngFor="let qaBlock of getQABlocks();let blockIndex = index" class="qablock-outer mt-15">
         <app-qa-block [qaBlock]="qaBlock" [qaBlockIndex]="blockIndex"></app-qa-block>
     </div>
     
-    <div class="btn-panel">
+    <div class="btn-panel mt-30">
         <button mat-raised-button color="primary" (click)="addNewQABlock()">Add New QA Block</button>
     </div>
 </div>
