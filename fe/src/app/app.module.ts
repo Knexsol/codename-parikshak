@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -17,6 +19,7 @@ import { QABlockComponent } from './components/pages/create-exam/qa-block/qa-blo
 import { CreateExamIntroSectionComponent } from './components/pages/create-exam/create-exam-intro-section/create-exam-intro-section.component';
 import { CreateExamBodySectionComponent } from './components/pages/create-exam/create-exam-body-section/create-exam-body-section.component';
 import { CreateExamFinishSectionComponent } from './components/pages/create-exam/create-exam-finish-section/create-exam-finish-section.component';
+import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +34,15 @@ import { CreateExamFinishSectionComponent } from './components/pages/create-exam
     CreateExamIntroSectionComponent,
     CreateExamBodySectionComponent,
     CreateExamFinishSectionComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule ,
+    FormsModule,
+    HttpClientModule,
+    MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,

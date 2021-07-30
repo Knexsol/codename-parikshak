@@ -1,11 +1,14 @@
 import os.path
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
-@app.route("/custom-endpoint")
-def custom_endpoint_handler():
-    return jsonify(myKey="myValue")
+@app.route("/api/exam", methods=["POST"])
+def create_exam():
+    # return jsonify(myKey="myValue")
+    return { "data": request.get_json(), "response": "You got it dude" }
 
 
 # Serving static files
@@ -25,4 +28,5 @@ def static_proxy(path):
         return send_from_directory(FE_BUILD_DIR, "index.html")
 
 
+# Comment this out while deploying
 app.run(port=9099, debug=True)
