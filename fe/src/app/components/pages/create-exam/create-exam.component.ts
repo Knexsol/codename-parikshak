@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TQABlock, TQPaper } from '../../../types/question.types'
 import { QAService } from '../../../services/qa.service'
 import { RestService } from '../../../services/rest.service'
@@ -6,7 +6,8 @@ import { RestService } from '../../../services/rest.service'
 @Component({
     selector: 'app-create-exam',
     templateUrl: './create-exam.component.html',
-    styleUrls: ['./create-exam.component.scss']
+    styleUrls: ['./create-exam.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class CreateExamComponent implements OnInit {
 

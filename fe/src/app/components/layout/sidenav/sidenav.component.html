@@ -1,6 +1,10 @@
 <mat-drawer-container class="sidenav-container" [ngClass]="{'open': isSidebarOpened}" autosize>
     <mat-drawer #drawer class="sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
+      <ul>
+        <li *ngFor="let nav of navs" (click)="drawer.toggle(); isSidebarOpened = !isSidebarOpened;">
+          <a [routerLink]="nav.path">{{nav.title}}</a>
+        </li>
+      </ul>
       
     </mat-drawer>
     <button class="btn-toggle" type="button" mat-button (click)="drawer.toggle(); isSidebarOpened = !isSidebarOpened;">

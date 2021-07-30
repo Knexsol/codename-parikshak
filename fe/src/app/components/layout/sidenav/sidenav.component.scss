@@ -19,3 +19,15 @@
 .sidenav-container.open .btn-toggle {
     background: orange;
 }
+
+.sidenav-container .sidenav ul {
+    padding: 0;
+    list-style: none;
+}
+.sidenav-container .sidenav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 20px;
+}
