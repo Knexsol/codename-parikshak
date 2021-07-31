@@ -6,8 +6,7 @@
       <ul>
         <li *ngFor="let nav of navs" (click)="toggleSidenav()">
           <a [routerLink]="nav.path">
-            <mat-icon class="mr-5">{{nav.matIcon}}</mat-icon>
-            <!-- <i class="{{nav.faClass}} mr-5"></i> -->
+            <mat-icon class="mr-10">{{nav.matIcon}}</mat-icon>
             {{nav.title}}
           </a>
         </li>
