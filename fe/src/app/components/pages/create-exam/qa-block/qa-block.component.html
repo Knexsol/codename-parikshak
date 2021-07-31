@@ -27,7 +27,7 @@
         <mat-form-field class="option" *ngFor="let option of qaBlock.options; let optionIndex = index">
             <span class="op-index">{{ALPHA[optionIndex]}}. </span>
             <mat-label>Option</mat-label>
-            <input matInput placeholder="Type option here..." [value]="option" (change)="updateOptionValue($event, optionIndex)">
+            <input matInput placeholder="Type option here..." [value]="option" (blur)="updateOptionValue($event, optionIndex)">
             <mat-icon class="del-op">delete</mat-icon>
         </mat-form-field>
 
