@@ -256,6 +256,33 @@ const environment = {
 
 /***/ }),
 
+/***/ "B+hG":
+/*!*************************************************************!*\
+  !*** ./src/app/components/pages/signin/signin.component.ts ***!
+  \*************************************************************/
+/*! exports provided: SigninComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SigninComponent", function() { return SigninComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+class SigninComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+SigninComponent.ɵfac = function SigninComponent_Factory(t) { return new (t || SigninComponent)(); };
+SigninComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SigninComponent, selectors: [["app-signin"]], decls: 2, vars: 0, template: function SigninComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "signin works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaWduaW4uY29tcG9uZW50LnNjc3MifQ== */"] });
+
+
+/***/ }),
+
 /***/ "EmjT":
 /*!*****************************************************************************!*\
   !*** ./src/app/components/pages/create-exam/qa-block/qa-block.component.ts ***!
@@ -500,7 +527,7 @@ ExamsGalleryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
 /*!*******************************************!*\
   !*** ./src/app/components/pages/index.ts ***!
   \*******************************************/
-/*! exports provided: LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGalleryComponent */
+/*! exports provided: LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGalleryComponent, SigninComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -516,6 +543,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _exams_gallery_exams_gallery_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./exams-gallery/exams-gallery.component */ "H4t1");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ExamsGalleryComponent", function() { return _exams_gallery_exams_gallery_component__WEBPACK_IMPORTED_MODULE_3__["ExamsGalleryComponent"]; });
+
+/* harmony import */ var _signin_signin_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./signin/signin.component */ "B+hG");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SigninComponent", function() { return _signin_signin_component__WEBPACK_IMPORTED_MODULE_4__["SigninComponent"]; });
+
 
 
 
@@ -641,9 +672,10 @@ const _c0 = ["sidenavdrawer"];
 function SidenavComponent_li_4_Template(rf, ctx) { if (rf & 1) {
     const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SidenavComponent_li_4_Template_li_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2); _r0.toggle(); return ctx_r3.isSidebarOpened = !ctx_r3.isSidebarOpened; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SidenavComponent_li_4_Template_li_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r3.toggleSidenav(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "i");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -651,23 +683,30 @@ function SidenavComponent_li_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", nav_r2.path);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](nav_r2.title);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("", nav_r2.faClass, " mr-5");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", nav_r2.title, " ");
 } }
 const _c1 = function (a0) { return { "open": a0 }; };
 class SidenavComponent {
     constructor() {
         this.isSidebarOpened = false;
         this.navs = [
-            { title: 'Home', path: '/' },
-            { title: 'Create Exam', path: '/create-exam' },
-            { title: 'Link 3', path: '/link-3' },
-            { title: 'Link 4', path: '/link-4' },
-            { title: 'Link 5', path: '/link-5' },
+            { title: 'Home', path: '/', faClass: 'fas fa-home' },
+            // { title: 'Create Exam', path: '/create-exam', faClass: 'fas fa-magic' },
+            { title: 'Exams', path: '/exams-gallery', faClass: 'far fa-list-alt' },
+            { title: 'Organizations', path: '/create-org', faClass: 'fas fa-university' },
+            { title: 'My Dashboard', path: '/link-5', faClass: 'fas fa-chart-line' },
+            { title: 'Sign In', path: '/sign-in', faClass: 'fas fa-sign-in-alt' },
         ];
     }
     ngOnInit() {
         console.log('Inside ngOnInit');
         console.log(this.sidenavdrawer);
+    }
+    toggleSidenav() {
+        this.sidenavdrawer.toggle();
+        this.isSidebarOpened = !this.isSidebarOpened;
     }
 }
 SidenavComponent.ɵfac = function SidenavComponent_Factory(t) { return new (t || SidenavComponent)(); };
@@ -677,15 +716,14 @@ SidenavComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.sidenavdrawer = _t.first);
     } }, decls: 7, vars: 4, consts: [["autosize", "", 1, "sidenav-container", 3, "ngClass"], ["mode", "side", 1, "sidenav"], ["sidenavdrawer", ""], [3, "click", 4, "ngFor", "ngForOf"], ["type", "button", "mat-button", "", 1, "btn-toggle", 3, "click"], [1, "fas", "fa-bars"], [3, "click"], [3, "routerLink"]], template: function SidenavComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-drawer-container", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-drawer", 1, 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "ul");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, SidenavComponent_li_4_Template, 3, 2, "li", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, SidenavComponent_li_4_Template, 4, 5, "li", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "button", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SidenavComponent_Template_button_click_5_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2); _r0.toggle(); return ctx.isSidebarOpened = !ctx.isSidebarOpened; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SidenavComponent_Template_button_click_5_listener() { return ctx.toggleSidenav(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "i", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -846,7 +884,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_pages_create_exam_create_exam_body_section_create_exam_body_section_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/pages/create-exam/create-exam-body-section/create-exam-body-section.component */ "PfO5");
 /* harmony import */ var _components_pages_create_exam_create_exam_finish_section_create_exam_finish_section_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/pages/create-exam/create-exam-finish-section/create-exam-finish-section.component */ "3oOw");
 /* harmony import */ var _components_layout_sidenav_sidenav_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/layout/sidenav/sidenav.component */ "RAyZ");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _components_pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/pages/signin/signin.component */ "B+hG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
 
 
 
@@ -872,8 +912,8 @@ __webpack_require__.r(__webpack_exports__);
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_21__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_21__["ɵɵdefineInjector"]({ providers: [], imports: [[
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
@@ -888,7 +928,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_21__["ɵɵdefineInjecto
             _angular_material_select__WEBPACK_IMPORTED_MODULE_12__["MatSelectModule"],
             _angular_material_stepper__WEBPACK_IMPORTED_MODULE_13__["MatStepperModule"]
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_21__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
         _components_layout__WEBPACK_IMPORTED_MODULE_14__["HeaderComponent"],
         _components_layout__WEBPACK_IMPORTED_MODULE_14__["FooterComponent"],
         _components_pages__WEBPACK_IMPORTED_MODULE_15__["LandingComponent"],
@@ -899,7 +939,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_21__["ɵɵdefineInjecto
         _components_pages_create_exam_create_exam_intro_section_create_exam_intro_section_component__WEBPACK_IMPORTED_MODULE_17__["CreateExamIntroSectionComponent"],
         _components_pages_create_exam_create_exam_body_section_create_exam_body_section_component__WEBPACK_IMPORTED_MODULE_18__["CreateExamBodySectionComponent"],
         _components_pages_create_exam_create_exam_finish_section_create_exam_finish_section_component__WEBPACK_IMPORTED_MODULE_19__["CreateExamFinishSectionComponent"],
-        _components_layout_sidenav_sidenav_component__WEBPACK_IMPORTED_MODULE_20__["SidenavComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _components_layout_sidenav_sidenav_component__WEBPACK_IMPORTED_MODULE_20__["SidenavComponent"],
+        _components_pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_21__["SigninComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
@@ -1057,6 +1098,7 @@ const routes = [
     { path: 'create-exam', component: _components_pages__WEBPACK_IMPORTED_MODULE_1__["CreateExamComponent"] },
     { path: 'create-org', component: _components_pages__WEBPACK_IMPORTED_MODULE_1__["CreateOrgComponent"] },
     { path: 'exams-gallery', component: _components_pages__WEBPACK_IMPORTED_MODULE_1__["ExamsGalleryComponent"] },
+    { path: 'sign-in', component: _components_pages__WEBPACK_IMPORTED_MODULE_1__["SigninComponent"] },
 ];
 class AppRoutingModule {
 }
