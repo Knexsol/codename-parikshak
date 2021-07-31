@@ -3,17 +3,22 @@
     <section class="half-sec mb-15">
         <h1>Sign In</h1>
 
-        <mat-form-field class="field">
-            <mat-label>Email</mat-label>
-            <input matInput>
-        </mat-form-field>
-
-        <mat-form-field class="field">
-            <mat-label>Password</mat-label>
-            <input matInput type="password">
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" class="field mt-15">Sign In</button>
+        <form #signinForm="ngForm" (ngSubmit)="handleSignin($event, signinForm)">
+            <mat-form-field class="field">
+                <mat-label>Email</mat-label>
+                <input matInput name="email" ngModel>
+                <mat-icon class="input-right-icon">error</mat-icon>
+            </mat-form-field>
+    
+            <mat-form-field class="field">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="pswd" ngModel>
+                <mat-icon class="input-right-icon">error</mat-icon>
+            </mat-form-field>
+    
+            <button type="submit" mat-raised-button color="primary" class="field mt-15">Sign In</button>
+        </form>
+        
     </section>
 
 
@@ -21,26 +26,33 @@
     <section class="half-sec mb-15">
         <h1>Sign Up</h1>
 
-        <mat-form-field class="field">
-            <mat-label>Fullname</mat-label>
-            <input matInput>
-        </mat-form-field>
-
-        <mat-form-field class="field">
-            <mat-label>Email</mat-label>
-            <input matInput>
-        </mat-form-field>
-
-        <mat-form-field class="field">
-            <mat-label>Password</mat-label>
-            <input matInput type="password">
-        </mat-form-field>
-
-        <mat-form-field class="field">
-            <mat-label>Repeat Password</mat-label>
-            <input matInput type="password">
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" class="field mt-15">Sign Up</button>
+        <form #signupForm="ngForm" (ngSubmit)="handleSignup($event, signupForm)">
+            <mat-form-field class="field">
+                <mat-label>Fullname</mat-label>
+                <input matInput name="fulllname" ngModel>
+                <mat-icon class="input-right-icon">error</mat-icon>
+            </mat-form-field>
+    
+            <mat-form-field class="field">
+                <mat-label>Email</mat-label>
+                <input matInput name="email" ngModel>
+                <mat-icon class="input-right-icon">error</mat-icon>
+            </mat-form-field>
+    
+            <mat-form-field class="field">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="pswd" ngModel>
+                <mat-icon class="input-right-icon">error</mat-icon>
+            </mat-form-field>
+    
+            <mat-form-field class="field">
+                <mat-label>Repeat Password</mat-label>
+                <input matInput type="password" name="rpswd" ngModel>
+                <mat-icon class="input-right-icon">error</mat-icon>
+            </mat-form-field>
+    
+            <button mat-raised-button color="primary" class="field mt-15">Sign Up</button>
+        </form>
+        
     </section>
 </div>

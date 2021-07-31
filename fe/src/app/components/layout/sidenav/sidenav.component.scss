@@ -13,8 +13,16 @@
 .sidenav-container .btn-toggle {
     color: #fff;
     font-size: 22px;
-    transform: translate(-8px, 0);
-    line-height: 50px;
+    position: fixed;
+    top: 8px;
+    left: -7px;
+}
+.sidenav-container .close-sidenav {
+    color: #fff;
+    font-size: 22px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .sidenav-container.open .btn-toggle {
     background: orange;
@@ -23,6 +31,7 @@
 .sidenav-container .sidenav ul {
     padding: 0;
     list-style: none;
+    margin-top: 40px;
 }
 .sidenav-container .sidenav ul li a {
     display: block;
@@ -30,4 +39,6 @@
     color: #fff !important;
     text-decoration: none;
     font-size: 20px;
+    display: flex;
+    align-items: center;
 }

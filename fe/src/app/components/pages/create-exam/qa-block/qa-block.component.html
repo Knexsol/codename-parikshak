@@ -28,7 +28,8 @@
             <span class="op-index">{{ALPHA[optionIndex]}}. </span>
             <mat-label>Option</mat-label>
             <input matInput placeholder="Type option here..." [value]="option" (blur)="updateOptionValue($event, optionIndex)">
-            <mat-icon class="del-op">delete</mat-icon>
+            <!-- <input matInput placeholder="Type option here..." [(ngModel)]="option"> -->
+            <mat-icon class="del-op input-right-icon">delete</mat-icon>
         </mat-form-field>
 
         <button *ngIf="qaBlock.options.length < MAX_OPTION" mat-raised-button (click)="addNewOption()">Add Option</button>

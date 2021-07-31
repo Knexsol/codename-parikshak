@@ -1,9 +1,13 @@
 <mat-drawer-container class="sidenav-container" [ngClass]="{'open': isSidebarOpened}" autosize>
     <mat-drawer #sidenavdrawer class="sidenav" mode="side">
+      <button class="close-sidenav" type="button" mat-button (click)="toggleSidenav()">
+        <mat-icon>close</mat-icon>
+      </button>
       <ul>
         <li *ngFor="let nav of navs" (click)="toggleSidenav()">
           <a [routerLink]="nav.path">
-            <i class="{{nav.faClass}} mr-5"></i>
+            <mat-icon class="mr-5">{{nav.matIcon}}</mat-icon>
+            <!-- <i class="{{nav.faClass}} mr-5"></i> -->
             {{nav.title}}
           </a>
         </li>
@@ -11,7 +15,7 @@
       
     </mat-drawer>
     <button class="btn-toggle" type="button" mat-button (click)="toggleSidenav()">
-      <i class="fas fa-bars"></i>
+      <mat-icon>menu</mat-icon>
     </button>
 </mat-drawer-container>
   

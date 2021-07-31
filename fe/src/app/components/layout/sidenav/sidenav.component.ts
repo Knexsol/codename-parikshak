@@ -10,12 +10,12 @@ export class SidenavComponent implements OnInit {
   @ViewChild('sidenavdrawer', { static: true }) sidenavdrawer!: MatDrawer;  // static: true if we need to use it in ngOnInit, else false
   isSidebarOpened = false
   navs = [
-    { title: 'Home', path: '/', faClass: 'fas fa-home' },
-    // { title: 'Create Exam', path: '/create-exam', faClass: 'fas fa-magic' },
-    { title: 'Exams', path: '/exams-gallery', faClass: 'far fa-list-alt' },
-    { title: 'Organizations', path: '/create-org', faClass: 'fas fa-university' },
-    { title: 'My Dashboard', path: '/link-5', faClass: 'fas fa-chart-line' },
-    { title: 'Sign In', path: '/sign-in', faClass: 'fas fa-sign-in-alt' },
+    { title: 'Home', path: '/', matIcon: 'home' },
+    // { title: 'Create Exam', path: '/create-exam' },
+    { title: 'Exams', path: '/exams-gallery', matIcon: 'fact_check' },
+    { title: 'Organizations', path: '/create-org', matIcon: 'school' },
+    { title: 'My Dashboard', path: '/link-5', matIcon: 'dashboard' },
+    { title: 'Sign In', path: '/sign-in', matIcon: 'people_alt' },
   ]
 
   constructor() { }

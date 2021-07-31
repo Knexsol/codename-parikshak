@@ -80,6 +80,13 @@ mat-form-field[fullWidth] {
 .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
     background-color: var(--primary-color);
 }
+.input-right-icon {
+    position: absolute;
+    top: 7px;
+    right: -30px;
+    cursor: default;
+    color: #f44336;
+}
 @media (max-width: 600px) {
     .hide-below-600 {
         display: none !important;
