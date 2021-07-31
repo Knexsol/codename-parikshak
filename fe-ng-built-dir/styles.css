@@ -46,6 +46,9 @@ body {
 .mr-5 {
   margin-right: 5px !important;
 }
+.mr-10 {
+  margin-right: 10px !important;
+}
 .pt-0 {
   padding-top: 0 !important;
 }
@@ -91,6 +94,13 @@ mat-form-field[fullWidth] .mat-form-field-wrapper {
 }
 .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
   background-color: var(--primary-color);
+}
+.input-right-icon {
+  position: absolute;
+  top: 7px;
+  right: -30px;
+  cursor: default;
+  color: #f44336;
 }
 @media (max-width: 600px) {
   .hide-below-600 {
