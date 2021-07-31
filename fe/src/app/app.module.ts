@@ -20,6 +20,7 @@ import { CreateExamIntroSectionComponent } from './components/pages/create-exam/
 import { CreateExamBodySectionComponent } from './components/pages/create-exam/create-exam-body-section/create-exam-body-section.component';
 import { CreateExamFinishSectionComponent } from './components/pages/create-exam/create-exam-finish-section/create-exam-finish-section.component';
 import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
+import { SigninComponent } from './components/pages/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SidenavComponent } from './components/layout/sidenav/sidenav.component'
     CreateExamBodySectionComponent,
     CreateExamFinishSectionComponent,
     SidenavComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,

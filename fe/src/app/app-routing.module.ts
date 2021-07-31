@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGalleryComponent } from './components/pages';
+import { 
+  LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGalleryComponent, 
+  SigninComponent 
+} from './components/pages';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -8,6 +11,7 @@ const routes: Routes = [
   { path: 'create-exam', component: CreateExamComponent },
   { path: 'create-org', component: CreateOrgComponent },
   { path: 'exams-gallery', component: ExamsGalleryComponent },
+  { path: 'sign-in', component: SigninComponent },
 ];
 
 @NgModule({
