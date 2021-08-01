@@ -2,6 +2,8 @@ import os.path
 from flask import Flask, jsonify, send_from_directory, request
 from flask_cors import CORS
 
+from be_python.services.mongo import signup
+
 app = Flask(__name__)
 CORS(app)
 
@@ -9,6 +11,12 @@ CORS(app)
 def create_exam():
     # return jsonify(myKey="myValue")
     return { "data": request.get_json(), "response": "You got it dude" }
+
+
+@app.route("/api/user/signup", methods=["POST"])
+def user_signup():
+    user_data = request.get_json()
+    return signup(user_data)
 
 
 # Serving static files
