@@ -19,4 +19,9 @@ def jwt_encode(data):
 
 
 def jwt_decode(txt):
-    return jwt.decode(txt, SECRET, algorithms=["HS256"])
+    try:
+        return jwt.decode(txt, SECRET, algorithms=["HS256"])
+    except Exception as ex:
+        print("Token signature error. Somebody used a forged token")
+        print(ex)
+        return None
