@@ -10,6 +10,7 @@ export class RestService {
 
   async post (url: string, data: any) {
     let res = await this.http.post(url, data).toPromise()
-    console.log(res)
+    // console.log('Inside RestService::post', res)
+    return res
   }
 }

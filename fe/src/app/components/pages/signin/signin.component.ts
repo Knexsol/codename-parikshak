@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ApiService } from '../../../services/api.service'
+import { TSigninPost, TSignupPost } from '../../../types/api.types'
+
 
 @Component({
   selector: 'app-signin',
@@ -12,20 +15,49 @@ export class SigninComponent implements OnInit {
   signUpObj = { email: '', pswd: '', rpswd: '', fullname: '' }
 
 
-  constructor() { }
+  constructor(private _api: ApiService) { }
 
   ngOnInit(): void {
   }
 
-  handleSignin (ev: Event, el: NgForm) {
+  async handleSignin (ev: Event, el: NgForm) {
     ev.preventDefault()
-    console.log(el)
+    console.log(el.form.value)
     // console.log(this.signInObj)
+
+    const { email, pswd } = el.form.value
+
+    // TODO VALIDATIONS
+    const userData = { email, pswd } as TSigninPost
+
+    const res = await this._api.signin(userData) as any
+
+    if(res.status) {
+      alert(res.msg)
+    }
+    else {
+      alert("Couldn't get a response back from the server...")
+    }
   }
 
-  handleSignup (ev: Event, el: NgForm) {
+
+  async handleSignup (ev: Event, el: NgForm) {
     ev.preventDefault()
-    console.log(el)
+    console.log(el.form.value)
+    const { fullname, email, pswd, rpswd } = el.form.value
+
+    // TODO VALIDATIONS
+    const userData = { fullname, email, pswd } as TSignupPost
+
+    const res = await this._api.signup(userData) as any
+
+    if(res.status) {
+      alert(res.msg)
+    }
+    else {
+      alert("Couldn't get a response back from the server...")
+    }
   }
+
 
 }
