@@ -106,3 +106,7 @@ dist
 # Python files and folders
 venv
 __pycache__/
+
+#ide files
+.vs 
+.idea 
