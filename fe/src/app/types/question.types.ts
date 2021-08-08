@@ -6,7 +6,10 @@ export type TQABlock = {
     ans: string 
 }
 export type TQPaperIntro = {
-    name: string
+    name: string,
+    cat: string,
+    subcat: string,
+    desc: string
 }
 export type TQPaperBody = {
     [qaBockID: string]: TQABlock

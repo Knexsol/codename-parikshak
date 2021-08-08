@@ -1,11 +1,12 @@
 <div class="create-exam-intro-section">
+    <h2>Let's start creating the exam</h2>
     <mat-form-field appearance="fill" class="full-width">
         <mat-label>Exam title</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="qaIntroObj.name">
     </mat-form-field>
     <div class="category-group">
         <div>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Category</mat-label>
                 <mat-select>
                     <mat-option value="one">First option</mat-option>
@@ -14,7 +15,7 @@
             </mat-form-field>
         </div>
         <div>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Subcategory</mat-label>
                 <mat-select>
                     <mat-option value="one">First option</mat-option>
@@ -26,6 +27,6 @@
     
     <mat-form-field appearance="fill" class="full-width">
         <mat-label>Description</mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput [(ngModel)]="qaIntroObj.desc"></textarea>
     </mat-form-field>
 </div>

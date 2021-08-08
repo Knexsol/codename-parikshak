@@ -18,7 +18,10 @@ export class QAPaper {
 
 
 export class QAPaper_Intro {
-    name: string = 'New Exam Paper'
+    name: string = ''
+    cat: string = ''
+    subcat: string = ''
+    desc: string = ''
 }
 
 export class QAPaper_Finish {
