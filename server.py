@@ -2,16 +2,16 @@ import os.path
 from flask import Flask, jsonify, send_from_directory, request
 from flask_cors import CORS
 
-from be_python.services.mongo import signup, signin
+from be_python.controllers.user import signup, signin
 
 app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/api/exam", methods=["POST"])
-def create_exam():
-    # return jsonify(myKey="myValue")
-    return { "data": request.get_json(), "response": "You got it dude" }
+# @app.route("/api/exam", methods=["POST"])
+# def create_exam():
+#     # return jsonify(myKey="myValue")
+#     return { "data": request.get_json(), "response": "You got it dude" }
 
 
 @app.route("/api/user/signup", methods=["POST"])

@@ -1,7 +1,14 @@
 from pymongo import MongoClient
 from .secure import *
 
-client = MongoClient('mongodb+srv://almighty:8961184810@cluster0.nwvop.mongodb.net/codenameparikshak?retryWrites=true&w=majority')
+"""
+Helpful details for Python and Mongodb in Flask and Pythonanywhere
+Links:
+https://help.pythonanywhere.com/pages/MongoDB
+https://flask-pymongo.readthedocs.io/en/latest/
+https://github.com/dcrosta/flask-pymongo
+"""
+client = MongoClient('mongodb+srv://almighty:8961184810@cluster0.nwvop.mongodb.net/codenameparikshak?retryWrites=true&w=majority', connectTimeoutMS=30000, socketTimeoutMS=None, socketKeepAlive=True, connect=False, maxPoolsize=1)
 
 
 def find_user(email):
