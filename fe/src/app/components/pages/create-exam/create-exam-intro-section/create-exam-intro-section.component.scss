@@ -8,13 +8,18 @@
     padding: 0 5px;
 }
 .category-group {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
 }
-.category-group > div {
-    display: flex;
-    flex: 1;
-    min-width: 300px;
-    padding: 0 5px;
-}
+// .category-group {
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin: 0 -5px;
+// }
+// .category-group > div {
+//     display: flex;
+//     flex: 1;
+//     min-width: 300px;
+//     padding: 0 5px;
+// }
