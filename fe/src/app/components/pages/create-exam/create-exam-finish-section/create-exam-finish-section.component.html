@@ -1,3 +1,16 @@
-<p>
-    Duration: {{qaFinishObj.duration}}
-</p>
+<div class="create-exam-intro-section">
+    <h1>Only a few final steps left ...</h1>
+
+    <mat-card>
+        <mat-card-subtitle>
+            Privacy (Who can see/take this exam)
+        </mat-card-subtitle>
+        <mat-radio-group aria-label="Select who have access to this exam" class="radio-group-vertical">
+            <mat-radio-button class="radio-btn" value="public">Public (Publicly listed and accessible to everyone)</mat-radio-button>
+            <mat-radio-button class="radio-btn" value="unlisted">Unlisted (Anyone with the link can access it)</mat-radio-button>
+            <mat-radio-button class="radio-btn" value="organization">Organization (Everyone in this organization can access it)</mat-radio-button>
+            <mat-radio-button class="radio-btn" value="private">Private (Only the people whose email is present below)</mat-radio-button>
+        </mat-radio-group>
+    </mat-card>
+</div>
+

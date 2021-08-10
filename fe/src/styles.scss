@@ -36,6 +36,16 @@ body {
 .pt-0 { padding-top: 0 !important; }
 .text-center { text-align: center; }
 .full-width { width: 100%; display: flex; }
+.radio-group-vertical {
+    display: flex;
+    flex-direction: column;
+}
+.radio-group-vertical .radio-btn {
+    margin: 7px;
+}
+.radio-group-vertical .radio-btn label {
+    white-space: normal;
+}
 /**
 * Material Override
 **/
