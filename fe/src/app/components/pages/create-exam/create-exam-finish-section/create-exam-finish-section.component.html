@@ -1,11 +1,29 @@
 <div class="create-exam-intro-section">
-    <h1>Only a few final steps left ...</h1>
+    <h1 class="font-fade-65 mb-15">Only a few final steps left ...</h1>
 
-    <mat-card>
-        <mat-card-subtitle>
-            Privacy (Who can see/take this exam)
-        </mat-card-subtitle>
-        <mat-radio-group aria-label="Select who have access to this exam" class="radio-group-vertical">
+    <mat-card class="sec-card">
+        Time / Duration
+        <mat-card-subtitle>(Total Questions: {{totalQ}} | Total Marks: 100)</mat-card-subtitle> 
+        <div class="time-input mt-15">
+            <span> hour</span>
+            <span> min</span>
+            <span> sec</span>
+            <mat-form-field appearance="fill" class="ti">
+                <input matInput type="number" [(ngModel)]="hour" min="0" max="5" />
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="ti">
+                <input matInput type="number" [(ngModel)]="min" min="0" max="59" />
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="ti">
+                <input matInput type="number" [(ngModel)]="sec" min="0" max="59" />
+            </mat-form-field>
+        </div>
+    </mat-card>
+
+    <mat-card class="sec-card">
+        Privacy 
+        <mat-card-subtitle>(Who can see/take this exam)</mat-card-subtitle>
+        <mat-radio-group aria-label="Select who have access to this exam" class="radio-group-vertical mt-15">
             <mat-radio-button class="radio-btn" value="public">Public (Publicly listed and accessible to everyone)</mat-radio-button>
             <mat-radio-button class="radio-btn" value="unlisted">Unlisted (Anyone with the link can access it)</mat-radio-button>
             <mat-radio-button class="radio-btn" value="organization">Organization (Everyone in this organization can access it)</mat-radio-button>

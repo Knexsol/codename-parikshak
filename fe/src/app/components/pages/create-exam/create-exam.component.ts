@@ -30,4 +30,9 @@ export class CreateExamComponent implements OnInit {
         this._restService.post(url, this.qPaper)
     }
 
+    getTotalQ () {
+        // console.log('inside getTotalQ')
+        return Object.keys(this.qPaper.body).length
+    }
+
 }

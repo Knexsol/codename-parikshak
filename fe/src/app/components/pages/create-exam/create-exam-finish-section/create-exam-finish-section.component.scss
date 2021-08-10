@@ -1,0 +1,14 @@
+.sec-card {
+    border-top: 3px solid var(--primary-color);
+    margin-top: 30px;
+}
+.time-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 300px;
+    gap: 7px;
+    text-align: center;
+}
+.time-input .ti {
+    width: 90px;
+}
