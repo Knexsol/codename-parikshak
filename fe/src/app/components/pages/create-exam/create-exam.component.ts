@@ -23,12 +23,15 @@ export class CreateExamComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    saveDraft(): void {
+    async saveDraft() {
         console.log(this.qPaper)
 
         const url = 'http://127.0.0.1:9099/api/exam'
 
-        this._restService.post(url, this.qPaper)
+        // this._restService.post(url, this.qPaper)
+
+        const res = await this._qaService.saveQAPaper(this.qPaper)
+        alert(res)
     }
 
     getTotalQ () {

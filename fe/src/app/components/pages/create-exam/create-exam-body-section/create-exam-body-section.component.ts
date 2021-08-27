@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { QAService } from 'src/app/services/qa.service';
+import { QABlock } from '../../../../models/QAPaper.model'
 
 @Component({
   selector: 'app-create-exam-body-section',
@@ -7,7 +8,7 @@ import { QAService } from 'src/app/services/qa.service';
   styleUrls: ['./create-exam-body-section.component.scss']
 })
 export class CreateExamBodySectionComponent implements OnInit {
-  @Input() qaBlocksObj: any;
+  @Input() qaBlocksObj: { [id: string]: QABlock } = {};
 
   constructor(private _qaService: QAService) { }
 
