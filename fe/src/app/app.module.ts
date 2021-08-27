@@ -23,6 +23,7 @@ import { CreateExamBodySectionComponent } from './components/pages/create-exam/c
 import { CreateExamFinishSectionComponent } from './components/pages/create-exam/create-exam-finish-section/create-exam-finish-section.component';
 import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
 import { SigninComponent } from './components/pages/signin/signin.component';
+import { MyExamsComponent } from './components/pages/my-exams/my-exams.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SigninComponent } from './components/pages/signin/signin.component';
     CreateExamFinishSectionComponent,
     SidenavComponent,
     SigninComponent,
+    MyExamsComponent,
   ],
   imports: [
     BrowserModule,

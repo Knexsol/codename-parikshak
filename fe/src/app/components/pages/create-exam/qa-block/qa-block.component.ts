@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { TQABlock } from '../../../../types/deprecated-question.types';
-import { QABlock, MCQOption } from '../../../../models/QAPaper.model'
-import { Q_TYPES_INFO, Q_TYPES } from '../../../../utils/constants'
 import { MatRadioChange } from '@angular/material/radio'
 import { MatCheckboxChange } from '@angular/material/checkbox'
+import { QABlock, MCQOption } from 'src/app/models/QAPaper.model'
+import { Q_TYPES_INFO, Q_TYPES } from 'src/app/utils/constants'
+
 
 @Component({
     selector: 'app-qa-block',

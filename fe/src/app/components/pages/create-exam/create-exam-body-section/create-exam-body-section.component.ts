@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { QAService } from 'src/app/services/qa.service';
-import { QABlock } from '../../../../models/QAPaper.model'
+import { QABlock } from 'src/app/models/QAPaper.model'
 
 @Component({
   selector: 'app-create-exam-body-section',

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 // import { TQPaperFinish } from 'src/app/types/deprecated-question.types';
-import { QAPaper_Finish } from '../../../../models/QAPaper.model'
+import { QAPaper_Finish } from 'src/app/models/QAPaper.model'
 
 @Component({
   selector: 'app-create-exam-finish-section',

@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-// import { TQABlock, TQPaper } from '../../../types/deprecated-question.types'
-import { QABlock, QAPaper } from '../../../models/QAPaper.model'
-import { QAService } from '../../../services/qa.service'
-import { RestService } from '../../../services/rest.service'
+import { QABlock, QAPaper } from 'src/app/models/QAPaper.model'
+import { QAService } from 'src/app/services/qa.service'
+import { RestService } from 'src/app/services/rest.service'
 
 @Component({
     selector: 'app-create-exam',

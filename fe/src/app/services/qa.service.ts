@@ -32,4 +32,19 @@ export class QAService {
             }
         })
     }
+
+    getMyQAPapers():Promise<Array<QAPaper>> {
+        return new Promise((resolve, reject) => {
+            try {
+                const SAVED_PAPERS = "SAVED_PAPERS"
+                // for now, save the qaPaper in localstorage
+                let savedPapers = JSON.parse(window.localStorage.getItem(SAVED_PAPERS) || '{}')
+                resolve(Object.values(savedPapers))
+            }
+            catch(err) {
+                console.log(err)
+                reject('Error!!! Could not save the qpaper ...')
+            }
+        })
+    }
 }

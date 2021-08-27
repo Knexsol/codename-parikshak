@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>My Exams</h1>
+
+  <div class="card-container">
+    <mat-card class="exam-card" *ngFor="let exam of myExams">
+      <mat-card-header>
+        <mat-card-title>{{exam.intro.name}}</mat-card-title>
+        <mat-card-subtitle>Category | Subcategory</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{exam.intro.desc}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>EDIT</button>
+        <button mat-button>PUBLISH</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</div>

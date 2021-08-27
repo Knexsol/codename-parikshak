@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 // import { TQPaperIntro } from 'src/app/types/deprecated-question.types';
-import { QAPaper_Intro } from '../../../../models/QAPaper.model'
+import { QAPaper_Intro } from 'src/app/models/QAPaper.model'
 
 type TCat = {
   name: string,
