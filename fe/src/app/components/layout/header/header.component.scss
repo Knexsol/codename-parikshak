@@ -1,6 +1,11 @@
 .header {
     background: var(--primary-color);
-    font-size: 30px;
+    font-size: 50px;
     color: #fff;
     justify-content: center;
+}
+@media (max-width: 600px) {
+    .header {
+        font-size: 40px;
+    }
 }
