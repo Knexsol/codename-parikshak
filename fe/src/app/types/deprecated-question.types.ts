@@ -5,6 +5,10 @@ export type TQABlock = {
     options: Array<string>
     ans: string 
 }
+export type TMCQOption = {
+    id: string,
+    text: string
+}
 export type TQPaperIntro = {
     name: string,
     cat: string,

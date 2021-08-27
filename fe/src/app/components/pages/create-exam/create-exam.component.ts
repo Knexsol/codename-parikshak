@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { TQABlock, TQPaper } from '../../../types/question.types'
+// import { TQABlock, TQPaper } from '../../../types/deprecated-question.types'
+import { QABlock, QAPaper } from '../../../models/QAPaper.model'
 import { QAService } from '../../../services/qa.service'
 import { RestService } from '../../../services/rest.service'
 
@@ -11,7 +12,7 @@ import { RestService } from '../../../services/rest.service'
 })
 export class CreateExamComponent implements OnInit {
 
-    qPaper: TQPaper
+    qPaper: QAPaper
     
     constructor(private _qaService: QAService,
                 private _restService: RestService) {

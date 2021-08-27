@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { TQPaperIntro } from 'src/app/types/question.types';
+// import { TQPaperIntro } from 'src/app/types/deprecated-question.types';
+import { QAPaper_Intro } from '../../../../models/QAPaper.model'
 
 type TCat = {
   name: string,
@@ -14,7 +15,7 @@ type TCat = {
   styleUrls: ['./create-exam-intro-section.component.scss']
 })
 export class CreateExamIntroSectionComponent implements OnInit {
-  @Input() qaIntroObj!: TQPaperIntro
+  @Input() qaIntroObj!: QAPaper_Intro
 
   cats: Array<TCat> = [
     { 

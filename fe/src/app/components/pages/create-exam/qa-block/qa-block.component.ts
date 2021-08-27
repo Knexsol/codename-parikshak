@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TQABlock } from '../../../../types/question.types';
-import { Q_TYPES } from '../../../../utils/constants'
+// import { TQABlock } from '../../../../types/deprecated-question.types';
+import { QABlock, MCQOption } from '../../../../models/QAPaper.model'
+import { Q_TYPES_INFO, Q_TYPES } from '../../../../utils/constants'
+import { MatRadioChange } from '@angular/material/radio'
+import { MatCheckboxChange } from '@angular/material/checkbox'
 
 @Component({
     selector: 'app-qa-block',
@@ -8,9 +11,10 @@ import { Q_TYPES } from '../../../../utils/constants'
     styleUrls: ['./qa-block.component.scss']
 })
 export class QABlockComponent implements OnInit {
-    @Input() qaBlock: TQABlock | any = {};
+    @Input() qaBlock!: QABlock;
     @Input() qaBlockIndex: number = 0
 
+    Q_TYPES_INFO = Q_TYPES_INFO
     Q_TYPES = Q_TYPES
     ALPHA = 'ABCDEFGHIJ'    // Max no. of options 10
     MAX_OPTION = 10
@@ -24,11 +28,50 @@ export class QABlockComponent implements OnInit {
     }
 
     addNewOption () {
-        this.qaBlock.options.push('')
+        const newOption = new MCQOption( (++this.qaBlock._ansCount).toString() , '')
+        this.qaBlock.options.push(newOption)
     }
 
     updateOptionValue (ev: Event, opIndex: number) {
-        this.qaBlock.options[opIndex] = (<HTMLInputElement>ev.target).value
+        this.qaBlock.options[opIndex] = {
+            ...this.qaBlock.options[opIndex],
+            text: (<HTMLInputElement>ev.target).value
+        }
+    }
+
+    deleteOption (ev: Event, opId: string) {
+        ev.stopPropagation()
+        this.qaBlock.options = this.qaBlock.options.filter(op => op.id !== opId)
+        console.log('deleting index = ' + opId)
+
+        // Also delete this opId from ans[], if present
+        this.qaBlock.ans = this.qaBlock.ans.filter(id => id !== opId)
+    }
+
+    markRadioAns(ev: MatRadioChange | Event) {
+        if ('stopPropagation' in ev) {
+            ev.stopPropagation()
+            return
+        }
+        console.log(ev)
+        // if(this.qaBlock.type === Q_TYPES.MCQ_SA) {
+            this.qaBlock.ans = [ev.value]
+        // }
+    }
+
+    updateCheckboxAns(ev: MatCheckboxChange | Event, opId: string) {
+        if ('stopPropagation' in ev) {
+            ev.stopPropagation()
+            return
+        }
+        console.log(ev)
+
+        if (ev.checked) {
+            this.qaBlock.ans = Array.from(new Set([...this.qaBlock.ans, opId]))
+        }
+        else {
+            this.qaBlock.ans = this.qaBlock.ans.filter(id => id !== opId)
+        }
     }
 
 }

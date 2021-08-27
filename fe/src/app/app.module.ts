@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatStepperModule } from '@angular/material/stepper';
 import { HeaderComponent, FooterComponent } from './components/layout';
 import { LandingComponent, CreateExamComponent, CreateOrgComponent, ExamsGalleryComponent } from './components/pages';
@@ -53,6 +54,7 @@ import { SigninComponent } from './components/pages/signin/signin.component';
     MatIconModule,
     MatSelectModule,
     MatRadioModule,
+    MatCheckboxModule,
     MatStepperModule
   ],
   providers: [],

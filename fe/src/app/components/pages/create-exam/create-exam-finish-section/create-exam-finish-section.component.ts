@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TQPaperFinish } from 'src/app/types/question.types';
+// import { TQPaperFinish } from 'src/app/types/deprecated-question.types';
+import { QAPaper_Finish } from '../../../../models/QAPaper.model'
 
 @Component({
   selector: 'app-create-exam-finish-section',
@@ -7,7 +8,7 @@ import { TQPaperFinish } from 'src/app/types/question.types';
   styleUrls: ['./create-exam-finish-section.component.scss']
 })
 export class CreateExamFinishSectionComponent implements OnInit {
-  @Input() qaFinishObj!: TQPaperFinish
+  @Input() qaFinishObj!: QAPaper_Finish
   @Input() totalQ: number = 0
 
   hour = 0

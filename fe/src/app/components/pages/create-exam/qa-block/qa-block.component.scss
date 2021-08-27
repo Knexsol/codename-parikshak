@@ -59,14 +59,18 @@
     width: 100%;
 }
 .option {
+    display: flex;
+    align-items: center;
+}
+.option-text {
     width: calc(100% - 60px);
     position: relative;
     margin-left: 30px;
 }
 .op-index {
-    position: absolute;
-    top: 7px;
-    left: -30px;
+    // position: absolute;
+    // top: 7px;
+    // left: -30px;
     cursor: default;
     font-weight: 600;
     color: var(--primary-color);

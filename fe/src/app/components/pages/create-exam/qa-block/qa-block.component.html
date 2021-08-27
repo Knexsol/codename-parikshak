@@ -11,8 +11,8 @@
     <div class="line-1">
         <mat-form-field class="mat-form-pt-0">
             <!-- <mat-label>Question Type</mat-label> -->
-            <mat-select [(ngModel)]="qaBlock.type">
-              <mat-option *ngFor="let qType of Q_TYPES" [value]="qType.id">
+            <mat-select [(ngModel)]="qaBlock.type" (selectionChange)="qaBlock.ans=[]">
+              <mat-option *ngFor="let qType of Q_TYPES_INFO" [value]="qType.id">
                 {{qType.text}}
               </mat-option>
             </mat-select>
@@ -23,14 +23,31 @@
             <mat-label>Question</mat-label>
             <textarea matInput placeholder="Type question here..." rows="4" [(ngModel)]="qaBlock.question"></textarea>
         </mat-form-field>
-
-        <mat-form-field class="option" *ngFor="let option of qaBlock.options; let optionIndex = index">
-            <span class="op-index">{{ALPHA[optionIndex]}}. </span>
-            <mat-label>Option</mat-label>
-            <input matInput placeholder="Type option here..." [value]="option" (blur)="updateOptionValue($event, optionIndex)">
-            <!-- <input matInput placeholder="Type option here..." [(ngModel)]="option"> -->
-            <mat-icon class="del-op input-right-icon">delete</mat-icon>
-        </mat-form-field>
+        <mat-radio-group (change)="markRadioAns($event)">
+            <div *ngFor="let op of qaBlock.options; let opIndex = index" class="option">
+                <mat-radio-button *ngIf="qaBlock.type === Q_TYPES.MCQ_SA"
+                    [value]="op.id" 
+                    [checked]="qaBlock.ans.includes(op.id)"
+                >
+                    <span class="op-index">{{ALPHA[opIndex]}}. </span>
+                </mat-radio-button>
+                <mat-checkbox *ngIf="qaBlock.type === Q_TYPES.MCQ_MA" 
+                    (change)="updateCheckboxAns($event, op.id)"
+                    [checked]="qaBlock.ans.includes(op.id)"
+                >
+                    <span class="op-index">{{ALPHA[opIndex]}}. </span>
+                </mat-checkbox>
+                <mat-form-field class="option-text">
+                    <mat-label>Option</mat-label>
+                    <input matInput placeholder="Type option here..." [value]="op.text" (blur)="updateOptionValue($event, opIndex)">
+                    <!-- <input matInput placeholder="Type option here..." [(ngModel)]="option"> -->
+                    <!-- <mat-icon  >delete</mat-icon> -->
+                </mat-form-field>
+                <button mat-icon-button (click)="deleteOption($event, op.id)" color="warn" class="del-op" aria-label="delete an option icon button">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </mat-radio-group>
 
         <button *ngIf="qaBlock.options.length < MAX_OPTION" mat-raised-button (click)="addNewOption()">Add Option</button>
     </div>

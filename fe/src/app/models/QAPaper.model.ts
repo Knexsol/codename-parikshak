@@ -31,9 +31,20 @@ export class QAPaper_Finish {
 
 export class QABlock {
     id: string = 'QA_' + Date.now() + '_' + Math.random().toString().replace('.', '')
-    type: string = Q_TYPES[0].id
+    type: string = Q_TYPES.MCQ_SA
     question: string = ''
-    options: Array<string> = []
-    ans: string = ''
+    options: Array<MCQOption> = [new MCQOption('0', '')]
+    ans: Array<string> = []
+    _ansCount: number = 0
+}
+
+export class MCQOption {
+    id: string
+    text: string
+
+    constructor (_id: string, _text: string) {
+        this.id = _id
+        this.text = _text
+    }
 }
 
