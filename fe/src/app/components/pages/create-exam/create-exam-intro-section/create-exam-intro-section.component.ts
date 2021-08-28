@@ -1,12 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-// import { TQPaperIntro } from 'src/app/types/deprecated-question.types';
 import { QAPaper_Intro } from 'src/app/models/QAPaper.model'
-
+import { CATS, SUBCATS } from 'src/app/utils/constants'
 type TCat = {
-  name: string,
-  value: string
-  subcat?: Array<TCat>
+  id: string,
+  name: string
 }
 
 @Component({
@@ -17,41 +15,38 @@ type TCat = {
 export class CreateExamIntroSectionComponent implements OnInit {
   @Input() qaIntroObj!: QAPaper_Intro
 
-  cats: Array<TCat> = [
-    { 
-      name: 'Engineering', 
-      value: 'engineering',
-      subcat: [
-        { name: 'Electronics and Communication', value: 'ece' },
-        { name: 'Electrical', value: 'ee' },
-        { name: 'Chemical', value: 'ch' },
-      ]
-    },
-    { 
-      name: 'IT', 
-      value: 'it',
-      subcat: [
-        { name: 'Networking', value: 'ntwk' },
-        { name: 'Cloud Computing', value: 'cc' },
-        { name: 'Web Dev', value: 'wd' },
-      ]
-    },
-  ]
+  cats: Array<TCat>
 
-  subcats: Array<TCat> = []
+  subcats: Array<{ [id: string]: string }> = []
 
-  constructor() { }
+  constructor() { 
+    // @ts-ignore
+    this.cats = Object.keys(CATS).reduce((acc, id) => {
+      // @ts-ignore
+      acc.push({ id, name: CATS[id] })
+      return acc
+    }, [])
+  }
 
   ngOnInit(): void {
+    // this.qaIntroObj.cat = Object.keys(CATS)[0]
   }
 
   onCatSelect (ev: MatSelectChange) {
-    // console.log('Selected id = ', ev)
-    for(let c of this.cats) {
-      if(c.value === ev.value) {
-        this.subcats = c.subcat!
+    console.log('Cat = ', ev.value)
+    this.qaIntroObj.cat = ev.value  // category ID
+    this.subcats = SUBCATS[ev.value].map(sc => {
+      return {
+        id: Object.keys(sc)[0],
+        name: Object.values(sc)[0]
       }
-    }
+    })
   }
+
+  onSubcatSelect (ev: MatSelectChange) {
+    console.log('Subcat = ', ev.value)
+    this.qaIntroObj.subcat = ev.value  // subcat ID
+  }
+
 
 }
