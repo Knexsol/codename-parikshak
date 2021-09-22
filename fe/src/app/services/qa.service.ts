@@ -47,4 +47,18 @@ export class QAService {
             }
         })
     }
+
+    getSavedQPaper(id: string) {
+        return new Promise((resolve, reject) => {
+            // if ocal, get from localstorage
+            if (id.startsWith('_LOCAL_QPaper_')) {
+                const SAVED_PAPERS = "SAVED_PAPERS"
+                // for now, save the qaPaper in localstorage
+                let savedPapers = JSON.parse(window.localStorage.getItem(SAVED_PAPERS) || '{}')
+                // savedPapers[qaPaper.id] = qaPaper
+                resolve(savedPapers[id])
+            }
+            // else get from API DB
+        })
+    }
 }
