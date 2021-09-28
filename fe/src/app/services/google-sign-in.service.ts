@@ -26,7 +26,10 @@ export class GoogleSignInService {
     
   }
 
-  isSignedIn = (): boolean => this.GoogleAuth.isSignedIn.get()
+  isSignedIn = ():boolean => this.GoogleAuth.isSignedIn.get()
+
+  signIn
+  signOut = () => this.GoogleAuth.signOut()
 
   _initGapi() {
     // @ts-ignore
