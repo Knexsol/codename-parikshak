@@ -20,6 +20,24 @@ export class CreateExamFinishSectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(typeof(this.qaFinishObj.duration) !== 'undefined') {
+      this.breakDownIntoHMS(Number(this.qaFinishObj.duration))
+    }
   }
 
+  updateTime () {
+    console.log(this.hour, this.min, this.sec)
+    if(this.hour < 0) this.hour = 0
+    if(this.min < 0) this.min = 0
+    if(this.sec < 0) this.sec = 0
+
+    this.qaFinishObj.duration = this.hour * 3600 + this.min * 60 + this.sec
+  }
+
+  breakDownIntoHMS (sec: number) {
+    this.hour = Math.floor(sec / 3600)
+    sec %= 3600
+    this.min = Math.floor(sec / 60)
+    this.sec = sec %= 60
+  }
 }

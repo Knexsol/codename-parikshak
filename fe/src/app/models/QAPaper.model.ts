@@ -26,6 +26,7 @@ export class QAPaper_Intro {
 
 export class QAPaper_Finish {
     duration: number = 1800
+    privacy: string = 'hidden'
 }
 
 

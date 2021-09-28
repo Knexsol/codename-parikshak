@@ -30,23 +30,30 @@ export class CreateExamIntroSectionComponent implements OnInit {
 
   ngOnInit(): void {
     // this.qaIntroObj.cat = Object.keys(CATS)[0]
+    // console.log(this.qaIntroObj)
+    if(this.qaIntroObj.cat && this.qaIntroObj.subcat) {
+      this.populateSubcats(this.qaIntroObj.cat)
+    }
   }
 
   onCatSelect (ev: MatSelectChange) {
-    console.log('Cat = ', ev.value)
+    // console.log('Cat = ', ev.value)
     this.qaIntroObj.cat = ev.value  // category ID
-    this.subcats = SUBCATS[ev.value].map(sc => {
+    this.populateSubcats(this.qaIntroObj.cat)
+  }
+
+  onSubcatSelect (ev: MatSelectChange) {
+    // console.log('Subcat = ', ev.value)
+    this.qaIntroObj.subcat = ev.value  // subcat ID
+  }
+
+  populateSubcats (cat: string) {
+    this.subcats = SUBCATS[cat].map(sc => {
       return {
         id: Object.keys(sc)[0],
         name: Object.values(sc)[0]
       }
     })
   }
-
-  onSubcatSelect (ev: MatSelectChange) {
-    console.log('Subcat = ', ev.value)
-    this.qaIntroObj.subcat = ev.value  // subcat ID
-  }
-
 
 }

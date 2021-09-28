@@ -8,7 +8,7 @@
         <!-- <div> -->
             <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Category</mat-label>
-                <mat-select (selectionChange)="onCatSelect($event)">
+                <mat-select (selectionChange)="onCatSelect($event)" [value]="qaIntroObj.cat">
                     <mat-option *ngFor="let c of cats" [value]="c.id">
                         {{c.name}}
                     </mat-option>
@@ -18,7 +18,7 @@
         <div> -->
             <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Subcategory</mat-label>
-                <mat-select (selectionChange)="onSubcatSelect($event)">
+                <mat-select (selectionChange)="onSubcatSelect($event)" [value]="qaIntroObj.subcat">
                     <mat-option *ngFor="let sc of subcats" [value]="sc.id">
                         {{sc.name}}
                     </mat-option>
