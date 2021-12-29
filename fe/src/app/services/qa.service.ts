@@ -48,6 +48,10 @@ export class QAService {
         })
     }
 
+    getAllQAPapers():Promise<Array<QAPaper>> {
+        return this.getMyQAPapers() // for now...
+    }
+
     getSavedQPaper(id: string) {
         return new Promise((resolve, reject) => {
             // if ocal, get from localstorage
